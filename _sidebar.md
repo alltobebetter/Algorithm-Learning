@@ -1,14 +1,19 @@
 <!-- _sidebar.md -->
 
-* 基础学习
-  * [ASCII码转化](/基础学习/ASCII码转化)
+* 基础知识
+  * [HTML常用标签](/基础知识/HTML常用标签)
+  * [HTML头部](/基础知识/HTML头部)
+  * [HTML属性](/基础知识/HTML属性)
+  * [HTML链接](/基础知识/HTML链接)
+  * [HTML链接属性](/基础知识/HTML链接属性)
+  * [HTML图像](/基础知识/HTML图像)
+  * [HTML文本格式化](/基础知识/HTML文本格式化)
+  * [HTML段落](/基础知识/HTML段落)
+  * [HTML标题](/基础知识/HTML标题)
+  * [HTML写作注意事项](/基础知识/写HTML的注意事项)
 
+* CSS
+  * [CSS基础语法](/CSS/CSS基础语法)
 
-* 课后练习
-  * [filter与回数](/课后练习/filter与回数)
-  * [求1-n的最小公倍数](/课后练习/求1-n的最小公倍数)
-
-
-* 难点易错
-  * [Lambda](/难点易错/Lambda)
-  * [sorted和sort的区别](/难点易错/sorted和sort的区别)
+* 易错辨析
+  * [em和i还有strong和b的区别](/易错辨析/em和i还有strong和b的区别)
