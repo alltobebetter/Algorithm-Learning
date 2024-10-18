@@ -1,80 +1,153 @@
-# HTML 图像
+# HTML 表格
 
-HTML 使用 `<img>` 标签来插入图像。`<img>` 是一个自闭合标签，这意味着它没有结束标签。
+HTML 表格用于以表格形式组织和展示数据。它们由行和列组成，可以用于显示各种类型的信息，例如产品列表、价格表、时间表等等。
 
-### 基本语法
+### 创建表格
 
-```html
-<img src="image.jpg" alt="Alternative text">
-```
+HTML 表格使用 `<table>` 标签创建。表格中的每一行使用 `<tr>` 标签表示，每一列使用 `<td>` 标签表示。
 
-*   **`src` 属性**:  指定图像文件的 URL。可以是绝对 URL 或相对 URL。
-*   **`alt` 属性**:  指定图像的替代文本。当图像无法显示时，替代文本会显示在图像的位置。替代文本也有利于 SEO 和网页的可访问性。
-
-### 示例
+**基本语法:**
 
 ```html
-<img src="images/logo.png" alt="Company Logo">
+<table>
+  <tr>
+    <td>Row 1, Cell 1</td>
+    <td>Row 1, Cell 2</td>
+  </tr>
+  <tr>
+    <td>Row 2, Cell 1</td>
+    <td>Row 2, Cell 2</td>
+  </tr>
+</table>
 ```
 
-### 图像格式
+### 表格标题
 
-常见的图像格式包括：
-
-*   **JPEG (`.jpg` 或 `.jpeg`):**  适用于照片和复杂的图像，支持有损压缩。
-*   **PNG (`.png`):**  适用于图标、图形和需要透明背景的图像，支持无损压缩。
-*   **GIF (`.gif`):**  适用于动画和简单的图形，支持无损压缩和透明背景。
-*   **SVG (`.svg`):**  适用于矢量图形，可以无限缩放而不失真。
-
-### 图像尺寸
-
-可以使用 `width` 和 `height` 属性来指定图像的宽度和高度。
+可以使用 `<th>` 标签来定义表格标题 (表头)。表头通常显示在表格的第一行或第一列。
 
 **示例:**
 
 ```html
-<img src="image.jpg" alt="Image" width="300" height="200">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>John Doe</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>Jane Doe</td>
+    <td>25</td>
+  </tr>
+</table>
 ```
 
-**注意:** 
+### 表格结构
 
-*   如果只指定 `width` 或 `height`，浏览器会自动调整另一个维度以保持图像的纵横比。
-*   建议使用 CSS 来控制图像尺寸，以便更好地控制图像的布局和响应式设计。
+表格可以分为以下几个部分：
 
-### 响应式图像
-
-为了使图像在不同尺寸的屏幕上都能良好地显示，可以使用 `srcset` 和 `sizes` 属性来指定不同尺寸的图像文件。
+*   **表头 (<thead>):**  包含表格的标题行。
+*   **表身 (<tbody>):**  包含表格的数据行。
+*   **表尾 (<tfoot>):**  包含表格的总结行，例如总计或平均值。
 
 **示例:**
 
 ```html
-<img src="image.jpg" 
-     alt="Image" 
-     srcset="image-small.jpg 300w, image-medium.jpg 600w, image-large.jpg 900w" 
-     sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw">
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John Doe</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>Jane Doe</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Total</td>
+      <td>55</td>
+    </tr>
+  </tfoot>
+</table>
 ```
 
-*   **`srcset` 属性**:  指定不同尺寸的图像文件和它们的宽度。
-*   **`sizes` 属性**:  指定浏览器应该根据屏幕宽度选择哪个图像文件。
+### 单元格跨行和跨列
 
-### 图片地图
+可以使用 `rowspan` 和 `colspan` 属性来使单元格跨越多行或多列。
 
-图片地图允许你在图像的不同区域定义可点击的链接。
+*   **`rowspan`:** 指定单元格跨越的行数。
+*   **`colspan`:** 指定单元格跨越的列数。
 
 **示例:**
 
 ```html
-<img src="image.jpg" alt="Image Map" usemap="#mymap">
-
-<map name="mymap">
-  <area shape="rect" coords="0,0,100,100" href="link1.html" alt="Link 1">
-  <area shape="circle" coords="200,200,50" href="link2.html" alt="Link 2">
-</map>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>City</th>
+  </tr>
+  <tr>
+    <td rowspan="2">John Doe</td>
+    <td>30</td>
+    <td>New York</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>London</td>
+  </tr>
+</table>
 ```
 
-*   **`<map>` 元素**:  定义图片地图。
-*   **`<area>` 元素**:  定义图片地图中的可点击区域。
+### 表格标题 (<caption>)
+
+可以使用 `<caption>` 标签来为表格添加标题。标题通常显示在表格的上方。
+
+**示例:**
+
+```html
+<table>
+  <caption>Employee Information</caption>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>John Doe</td>
+    <td>30</td>
+  </tr>
+</table>
+```
+
+### 表格样式
+
+可以使用 CSS 来控制表格的样式，例如边框、颜色、字体等等。
+
+**示例:**
+
+```css
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+```
 
 ### 总结
 
-HTML 图像是网页的重要组成部分，可以使用 `<img>` 标签来插入图像。了解图像格式、尺寸、响应式图像和图片地图可以帮助你创建更丰富、更具吸引力的网页。
+HTML 表格用于以表格形式组织和展示数据。了解表格的基本结构、标题、单元格跨行和跨列、标题和样式可以帮助你创建清晰易懂的表格。 
